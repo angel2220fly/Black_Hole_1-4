@@ -151,8 +151,6 @@ class compression:
                                                     Extract1=0
                                                     
                                                     Find=0
-                                                    Z8=0
-                                                    
                                                     En=10
                                                     Ci=1
                                                     while Find!=1:
@@ -171,7 +169,7 @@ class compression:
                                                                         C=format(Counts,'01b')
                                                                         C3=En-len(C)
                                                                         #print(C1)
-                                                                        if C3>=9 or INFO_A[:3]=="011" or INFO_A[:3]=="010" and Z8==0:
+                                                                        if C3>=9 or INFO_A[:3]=="011" or INFO_A[:3]=="010":
                                                                             
     
                                                                                 #print(C3)
@@ -234,9 +232,8 @@ class compression:
                                                                                    #print(Z5) 
                                                                                        
                                                                                    
-                                                                            if Z8==0 and C3==1:
+                                                                            if C3==1:
                                                                                    Z5="010"+INFO_A[2:]
-                                                                                   Z8=1
                                                                                    #print(Z5)
                                                                                    
                                                                                    
@@ -274,8 +271,7 @@ class compression:
                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                                             
                                                                     else:
-                                                                             En+=1
-                                                                             Z8=0
+                                                                             En+=1  
                                                                              #print(En)
                                                                              #print(len(Z4))                                                                                                                                                                                                                   
                                                     if Ci==1:               
@@ -431,7 +427,6 @@ class compression:
                                                 long_F=len(INFO)
                                                 block=0
                                                 Save=0
-                                                Z8=0
                                                 while Save!=1:
                                                       if Save==0:
                                                           
@@ -440,7 +435,7 @@ class compression:
                                                             
                                                             
                                                             
-                                                            if O=="010" and Z8==0:
+                                                            if O=="010":
                                                        
                                                                    block+=3
                                                                    OC=INFO[block:block+En-2]
@@ -453,8 +448,7 @@ class compression:
                                                                    Z2Z=format(E,C)
                                                                    ZE="01"+ZE
                                                                    Z2Z="01"+Z2Z
-                                                                   block+=En-2
-                                                                   Z8=1                                                                                 
+                                                                   block+=En-2                                                                                   
 
                                                                      
                                                                 
@@ -462,7 +456,7 @@ class compression:
                                                                 
                                                                                                     
                                                             
-                                                            elif O=="011" and Z8==0:
+                                                            elif O=="011":
                                                        
                                                        
                                                                 block+=3
