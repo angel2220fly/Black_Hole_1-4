@@ -151,8 +151,9 @@ class compression:
                                                     Extract1=0
                                                     
                                                     Find=0
-                                                    En=10
+                                                    En=255
                                                     Ci=1
+                                                    M1=0
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -265,13 +266,21 @@ class compression:
                                                                         
                                                                     if len(Z4)+8+13+len(C1) < long_11*8 or En==8191:
                                                                                                                                                                                                                             Find=1
+                                                                                                                                                                                                                            
                                                                                                                                                                                                                             Extract1=1
                                                                                                                                                                                                                             #print(Find)
                                                                                                                                                                                                                             #print(long_11)
                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                                             
                                                                     else:
-                                                                             En+=1  
+                                                                             if M1==0:
+                                                                                 En-=1
+                                                                             
+                                                                            
+                                                                             if En==10 or M1==1:
+                                                                                 En+=1
+                                                                                 M1=1
+                                                                             
                                                                              #print(En)
                                                                              #print(len(Z4))                                                                                                                                                                                                                   
                                                     if Ci==1:               
