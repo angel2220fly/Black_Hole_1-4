@@ -201,8 +201,25 @@ class compression:
                                                                                 
                                                                             elif En<=63:
                                                                                 C1=format(C4,'06b')                                                                           
-                                                                                                                                                             
-    
+                                                                            elif En<=127:
+                                                                                C1=format(C4,'07b')                                                                                                                                                                     
+
+                                                                            elif En<=255:
+                                                                                C1=format(C4,'08b') 
+                                                                                
+                                                                            elif En<=511:
+                                                                                C1=format(C4,'09b')                                                                                                         
+                                                                                
+                                                                            elif En<=1023:
+                                                                                C1=format(C4,'010b')   
+                                                                                
+                                                                            elif En<=2047:
+                                                                                C1=format(C4,'011b')  
+                                                                                
+                                                                            elif En<=4095:
+                                                                                C1=format(C4,'012b')                                                                                                                                                                                                                                                                        
+                                                                            elif En<=8191:
+                                                                                C1=format(C4,'013b')                  
                                                                             C2=format(longl,'06b') 
                                                                                                                                                         
     
@@ -246,7 +263,7 @@ class compression:
                                                                         
                                                                                                                                         
                                                                         
-                                                                    if len(Z4)+6+8+len(C1) < long_11*8 or En==63:
+                                                                    if len(Z4)+8+13+len(C1) < long_11*8 or En==8191:
                                                                                                                                                                                                                             Find=1
                                                                                                                                                                                                                             Extract1=1
                                                                                                                                                                                                                             #print(Find)
@@ -266,7 +283,7 @@ class compression:
 
                                                                 W="0"+str(len(C1))+"b"
                                                                 CL1=format(longl,W)        
-                                                                CL2=format(En,'06b')
+                                                                CL2=format(En,'013b')
                                                                
                                                                 #print(N3)
                                                                                                                          
@@ -343,23 +360,63 @@ class compression:
                                     INFO=Extract
                                    
                                         
-                                    En=int(INFO[:6],2)
+                                    En=int(INFO[:13],2)
                                         #print(longl)
-                                    INFO=INFO[6:]
+                                    INFO=INFO[13:]
                                     
                                     if En<=15:
                                         longl=int(INFO[:4],2)
                                         #print(longl)
-                                        INFO=INFO[4:]     
+                                        INFO=INFO[4:]
+                                        SEN=4     
                                     
                                     elif En<=31:
                                         longl=int(INFO[:5],2)
                                         #print(longl)
-                                        INFO=INFO[5:]                                    
+                                        INFO=INFO[5:]
+                                        SEN=5                                  
                                     elif En<=63:
                                         longl=int(INFO[:6],2)
-                                        #print(longl)
                                         INFO=INFO[6:]
+                                        SEN=6 
+                                        
+                                    elif En<=127:
+                                        longl=int(INFO[:7],2)
+                                        INFO=INFO[7:]
+                                        SEN=7                                       
+                                                                                                                  
+                                    elif En<=255:
+                                        longl=int(INFO[:8],2) 
+                                        INFO=INFO[8:]  
+                                        SEN=8                                      
+                                                                                
+                                                                                                                                                                
+                                    elif En<=511:
+                                        longl=int(INFO[:9],2) 
+                                        INFO=INFO[9:]
+                                        SEN=9                                       
+                                    elif En<=1023:
+                                        longl=int(INFO[:10],2) 
+                                        INFO=INFO[10:]
+                                        SEN=10                                                                                                                            
+                                    elif En<=2047:
+                                        longl=int(INFO[:11],2) 
+                                        INFO=INFO[11:]
+                                        SEN=11                     
+     
+                                    elif En<=4095:
+                                        longl=int(INFO[:12],2) 
+                                        INFO=INFO[12:]
+                                        SEN=12
+                                        
+                                        
+                                    elif En<=8191:
+                                        longl=int(INFO[:13],2) 
+                                        INFO=INFO[13:]
+                                        SEN=13                                                                                   
+                                                                                                                                                                   
+                                    
+                                    #print(SEN)                                    
                                     
                                     Extract1=0
 
@@ -404,22 +461,12 @@ class compression:
                                                        
                                                                 block+=3
                                                                 
-                                                                if En<=15:                                                         
+                                                                if En<=8191:                                                         
                                                                 
-                                                                    OCl=INFO[block:block+4]
+                                                                    OCl=INFO[block:block+SEN]
                                                                     Size=int(OCl,2)
-                                                                    block+=4                                                               
-                                                                
-                                                                elif En<=31:                                                         
-                                                                
-                                                                    OCl=INFO[block:block+5]
-                                                                    Size=int(OCl,2)
-                                                                    block+=5                                                                                                                           
-                                                                elif En<=63:                                                         
-                                                                
-                                                                    OCl=INFO[block:block+6]
-                                                                    Size=int(OCl,2)
-                                                                    block+=6
+                                                                    block+=SEN                                                               
+
 
                                                                    
                                                                 EB=INFO[block:block+(En-Size)]
