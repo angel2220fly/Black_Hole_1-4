@@ -169,7 +169,7 @@ class compression:
                                                                         C=format(Counts,'01b')
                                                                         C3=En-len(C)
                                                                         #print(C1)
-                                                                        if C3>=4+4 and En<=15 or C3>=5+4 and En<=31 or C3>=6 +4 and En<=63 or C3>=7+4 and En<=127 or C3>=8+4 and En<=255 or C3>=9+4 and En<=511 or C3>=10+4 and En<=1023 or C3>=11+4 and En<=2047 or C3>=12+4 and En<=4095 or C3>=13+4 and En<=8191 or INFO_A[:3]=="011" or INFO_A[:3]=="010":
+                                                                        if C3>=3+3 and En<=15 or C3>=5+3 and En<=31 or C3>=6 +3 and En<=63 or C3>=7+3 and En<=127 or C3>=8+3 and En<=255 or C3>=9+3 and En<=511 or C3>=10+3 and En<=1023 or C3>=11+3 and En<=2047 or C3>=12+3 and En<=4095 or C3>=13+3 and En<=8191 or INFO_A[:3]=="011" or INFO_A[:3]=="010":
                                                                             
     
                                                                                 #print(C3)
