@@ -154,6 +154,7 @@ class compression:
                                                     En=255
                                                     Ci=1
                                                     M1=0
+                                                    En1=0
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -162,8 +163,11 @@ class compression:
                                                                     long_F=len(INFO)
                                                                     block=0
                                                                     
+                                                                    
                                                                     while block<long_F:
                                                                         INFO_A=INFO[block:block+En]
+                                                                        if En1!=0:
+                                                                                INFO_A1=INFO[block+En:block+En+En1]
                                                                         longl=len(INFO_A)
                                                                         
                                                                         Counts=int(INFO_A,2)
@@ -229,7 +233,10 @@ class compression:
                                                                                    
                                                                                    
                                                                             if C3!=1:
-                                                                                   Z5="011"+C1+C 
+                                                                                   Z5="011"+C1+C
+                                                                                   if En1!=0:
+                                                                                           Z5="011"+C1+C+INFO_A1
+                                                                                           block+=En1
                                                                                    #print(Z5) 
                                                                                        
                                                                                    
@@ -262,14 +269,15 @@ class compression:
                                                                         block+=En
                                                                         
                                                                         
-                                                                                                                                        
-                                                                        
-                                                                    if len(Z4)+8+13+len(C1) < long_11*8 or En==8191:
-                                                                                                                                                                                                                            Find=1
-                                                                                                                                                                                                                            
-                                                                                                                                                                                                                            Extract1=1
-                                                                                                                                                                                                                            #print(Find)
-                                                                                                                                                                                                                            #print(long_11)
+                                                                    if En==8191:                                                                    
+                                                                       En1+=1
+                                                                       
+                                                                       M1=0
+                                                                       En=255
+                                                                    if len(Z4)+8+13+13+len(C1) < long_11*8 or En==8191 and En1==8191:
+                                                                            Find=1      
+                                                                                                                                                               
+                                                                            Extract1=1
                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                                             
                                                                     else:
@@ -293,6 +301,7 @@ class compression:
                                                                 W="0"+str(len(C1))+"b"
                                                                 CL1=format(longl,W)        
                                                                 CL2=format(En,'013b')
+                                                                CL3=format(En1,'013b')
                                                                
                                                                 #print(N3)
                                                                                                                          
@@ -305,7 +314,7 @@ class compression:
                                                                        #print(Long_PM1)
                                                                        N3=1                                                                       
                                                                        if N3==1:
-                                                                               File_information5_17="1"+CL2+CL1+Z4
+                                                                               File_information5_17="1"+CL3+CL2+CL1+Z4
                                                                                long_1=len(File_information5_17)
                                                                                add_bits=""
                                                                                count_bits=8-long_1%8
@@ -367,7 +376,9 @@ class compression:
 
                                                             
                                     INFO=Extract
-                                   
+                                    En2=int(INFO[:13],2)
+                                        #print(longl)
+                                    INFO=INFO[13:]
                                         
                                     En=int(INFO[:13],2)
                                         #print(longl)
@@ -489,6 +500,13 @@ class compression:
                                                                 C="0"+str(longl)+"b"
                                                                 ZE=format(E,En1)
                                                                 Z2Z=format(E,C)
+                                                                if En1!=0:
+                                                                        CAll=0
+                                                                        CAll=int(block)+int(En2)
+                                                                        if CAll<=long_F:
+                                                                                EB1=INFO[block:block+En2]
+                                                                                ZE=ZE+EB1
+                                                                                block+=En2
                                                                             
                                                             else:
                                                                    EB=INFO[block:block+En]
