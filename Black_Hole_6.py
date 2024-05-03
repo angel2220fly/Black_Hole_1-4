@@ -268,12 +268,8 @@ class compression:
                                                                         #print(Find)
                                                                         block+=En
                                                                         
-                                                                        
-                                                                    if En==8191:                                                                    
-                                                                       En1+=1
-                                                                       
-                                                                       M1=0
-                                                                       En=255
+                                                               
+
                                                                     if len(Z4)+8+13+13+len(C1) < long_11*8 or En1==8191:
                                                                             Find=1      
                                                                                                                                                                
@@ -288,7 +284,11 @@ class compression:
                                                                              if En==10 or M1==1:
                                                                                  En+=1
                                                                                  M1=1
-                                                                             
+                                                                                      
+                                                                             if En==8191:                                                                    
+                                                                                   En1+=1
+                                                                                   M1=0
+                                                                                   En=255
                                                                              #print(En)
                                                                              #print(len(Z4))                                                                                                                                                                                                                   
                                                     if Ci==1:               
