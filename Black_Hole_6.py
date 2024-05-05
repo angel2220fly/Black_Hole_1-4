@@ -451,10 +451,7 @@ class compression:
                                                       if Save==0:
                                                           
                                                         
-
-                                                            En3=0
                                                             O=INFO[block:block+3]
-                                                            
                                                             
                                                             
                                                             
@@ -471,8 +468,7 @@ class compression:
                                                                    Z2Z=format(E,C)
                                                                    ZE="01"+ZE
                                                                    Z2Z="01"+Z2Z
-                                                                   block+=En-2  
-                                                                   En3=61                                                                                 
+                                                                   block+=En-2                                                                                   
 
                                                                      
                                                                 
@@ -504,8 +500,7 @@ class compression:
                                                                 C="0"+str(longl)+"b"
                                                                 ZE=format(E,En1)
                                                                 Z2Z=format(E,C)
-                                                                En3=63
-                                                                if En2!=0:
+                                                                if En1!=0:
                                                                         CAll=0
                                                                         CAll=int(block)+int(En2)
                                                                         if CAll<=long_F:
@@ -523,8 +518,7 @@ class compression:
                                                                    ZE=format(E,En1)
                                                                    C="0"+str(longl)+"b"
                                                                    ZE=format(E,En1)
-                                                                   Z2Z=format(E,C)
-                                                                   En3=63                                                                                                  
+                                                                   Z2Z=format(E,C)                                                                                                   
     
                                                             
                                                                                                             
@@ -551,7 +545,7 @@ class compression:
                                                 long_L=len(Z4)
                                                 #print(long_L)
                                              
-                                                Z4=Z4[:long_L-En3]
+                                                Z4=Z4[:long_L-En]
                                                 Z4+=Z2Z
                                                 
                                                     
