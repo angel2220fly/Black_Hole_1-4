@@ -500,7 +500,7 @@ class compression:
                                                                 C="0"+str(longl)+"b"
                                                                 ZE=format(E,En1)
                                                                 Z2Z=format(E,C)
-                                                                if En1!=0:
+                                                                if En2!=0:
                                                                         CAll=0
                                                                         CAll=int(block)+int(En2)
                                                                         if CAll<=long_F:
