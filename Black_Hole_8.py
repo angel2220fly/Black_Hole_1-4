@@ -297,6 +297,7 @@ class compression:
                                                                                    En1+=1
                                                                                    M1=0
                                                                                    En=255
+                                                                                   En3=0
                                                                                    
                                                                                       
                                                                              elif En1==8191:
