@@ -279,7 +279,7 @@ class compression:
                                                                         
                                                                
 
-                                                                    if len(Z4)+8+13+13+13+len(C1) < long_11*8 or En4==2**(26+12):
+                                                                    if len(Z4)+8+13+13+13+len(C1) < long_11*8 or En4==2**(26+13):
                                                                             Find=1      
                                                                                                                                                                
                                                                             Extract1=1
@@ -299,11 +299,16 @@ class compression:
                                                                                    En1+=1
                                                                                    M1=0
                                                                                    En=255
-                                                                                   En3=0
+                                                                                   
                                                                                    
                                                                                       
                                                                              elif En1==8191:
-                                                                                 En3+=1                                                                                  
+                                                                                 En3+=1     
+                                                                                 
+                                                                                                                                                                                   
+                                                                             elif En3==8191:
+                                                                                 En1=0                                                                   
+                                                                                                                                                                                                                                                                                                                        
                                                                              #print(En)
                                                                              #print(len(Z4))                                                                                                                                                                                                                   
                                                     if Ci==1:               
