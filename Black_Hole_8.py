@@ -274,6 +274,7 @@ class compression:
                     
                                                                        
                                                                         Z4+=Z5
+                                                                        #print(Z5)
                                                                         #print(Find)
                                                                         block+=En
                                                                         
@@ -307,7 +308,9 @@ class compression:
                                                                                  
                                                                                                                                                                                    
                                                                              elif En3==8191:
-                                                                                 En1=0                                                                   
+                                                                                 En1=0
+                                                                                 En3=0 
+                                                                                                                                                   
                                                                                                                                                                                                                                                                                                                         
                                                                              #print(En)
                                                                              #print(len(Z4))                                                                                                                                                                                                                   
