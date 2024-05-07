@@ -503,10 +503,10 @@ class compression:
                                                                 if En2!=0:
                                                                         CAll=0
                                                                         CAll=int(block)+int(En2)
-                                                                        if CAll<=long_F:
-                                                                                EB1=INFO[block:block+En2]
-                                                                                ZE=ZE+EB1
-                                                                                block+=En2
+                                                                        
+                                                                        EB1=INFO[block:block+En2]
+                                                                        ZE=ZE+EB1
+                                                                        block+=En2
                                                                             
                                                             else:
                                                                    EB=INFO[block:block+En]
