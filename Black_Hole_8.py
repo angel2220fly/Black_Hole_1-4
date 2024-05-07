@@ -302,7 +302,7 @@ class compression:
                                                                                    
                                                                                    
                                                                              if En1==8191:                                                                    
-                                                                                   En3+=3
+                                                                                   En3+=1
                                                                                    En1=0
                                                                                 
                                                                                    
