@@ -538,7 +538,7 @@ class compression:
                                                                                 ZE=ZE+EB1
                                                                                 block+=En2
                                                                                 
-                                                                        if CAll<=long_F and C6%2==0:
+                                                                        if C6%2==0:
                                                                                 EB1=INFO[block:block+En3]
                                                                                 ZE=ZE+EB1
                                                                                 block+=En3                                                                    
