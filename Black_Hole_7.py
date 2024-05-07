@@ -30,6 +30,7 @@ class compression:
                     if name_input=="c":
                         i=1
                     if name_input=="e":
+                      
                         i=2
                     Clear=""
                     name = input("What is name of file? ")
@@ -82,6 +83,9 @@ class compression:
            
                     with open(name, "rb") as binary_file:
                         data = binary_file.read()
+                        if name_input=="e":
+                            import paq
+                            data=paq.decompress(data)
 
                         s=str(data)
                         long_11=len(data)
@@ -151,26 +155,21 @@ class compression:
                                                     Extract1=0
                                                     
                                                     Find=0
-                                                    En=63
+                                                    En=255
                                                     Ci=1
                                                     M1=0
-                                                    En1=62
-                                                    En3=61
-                                                    En4=0
-                                                    C6=0
+                                                    En1=0
                                                     while Find!=1:
                                                                     #print(Find)
                     
                                                                     Z4=""
                                                                     N3=0                                                                    
                                                                     long_F=len(INFO)
-                                                                    C6+=1
                                                                     block=0
                                                                     
                                                                     
                                                                     while block<long_F:
                                                                         INFO_A=INFO[block:block+En]
-                                                                        IN=INFO[block+En+En3:block+En+En3]
                                                                         if En1!=0:
                                                                                 INFO_A1=INFO[block+En:block+En+En1]
                                                                         longl=len(INFO_A)
@@ -239,18 +238,14 @@ class compression:
                                                                                    
                                                                             if C3!=1:
                                                                                    Z5="011"+C1+C
-                                                                                   if En1!=0 and C6%2==1 and block+En1<=long_F:
+                                                                                   if En1!=0 and block+En1<=long_F:
                                                                                            Z5="011"+C1+C+INFO_A1
                                                                                            block+=En1
-                                                                                                                                                                            
-                                                                                   if En1!=0 and C6%2==0 and block+En3<=long_F:
-                                                                                           Z5="011"+C1+C+IN
-                                                                                           block+=En3                                                                               #print(Z5) 
+                                                                                   #print(Z5) 
                                                                                        
                                                                                    
                                                                             if C3==1:
                                                                                    Z5="010"+INFO_A[2:]
-                                                                                   
                                                                                    #print(Z5)
                                                                                    
                                                                                    
@@ -279,14 +274,13 @@ class compression:
                                                                         
                                                                
 
-                                                                    if len(Z4)+8+13+13+13+len(C1) < long_11*8 or En4==(2**(26+13))-3:
+                                                                    if len(Z4)+8+13+13+len(C1) < long_11*8 or En1==8191:
                                                                             Find=1      
                                                                                                                                                                
                                                                             Extract1=1
                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                                             
                                                                     else:
-                                                                             En4+=1
                                                                              if M1==0:
                                                                                  En-=1
                                                                              
@@ -299,16 +293,6 @@ class compression:
                                                                                    En1+=1
                                                                                    M1=0
                                                                                    En=255
-                                                                                   
-                                                                                   
-                                                                                      
-                                                                             elif En1==8191:
-                                                                                 En3+=1     
-                                                                                 
-                                                                                                                                                                                   
-                                                                             elif En3==8191:
-                                                                                 En1=0                                                                   
-                                                                                                                                                                                                                                                                                                                        
                                                                              #print(En)
                                                                              #print(len(Z4))                                                                                                                                                                                                                   
                                                     if Ci==1:               
@@ -322,7 +306,6 @@ class compression:
                                                                 CL1=format(longl,W)        
                                                                 CL2=format(En,'013b')
                                                                 CL3=format(En1,'013b')
-                                                                CL4=format(En3,'013b')
                                                                
                                                                 #print(N3)
                                                                                                                          
@@ -335,7 +318,7 @@ class compression:
                                                                        #print(Long_PM1)
                                                                        N3=1                                                                       
                                                                        if N3==1:
-                                                                               File_information5_17="1"+CL4+CL3+CL2+CL1+Z4
+                                                                               File_information5_17="1"+CL3+CL2+CL1+Z4
                                                                                long_1=len(File_information5_17)
                                                                                add_bits=""
                                                                                count_bits=8-long_1%8
@@ -360,7 +343,9 @@ class compression:
                                                             File_information5_2=Clear
                                                             name=name+".bin"
                                                             jl=width_bits3
-                                                            #(jl=paq.compress(jl)
+                                                            import paq
+                                                            jl=paq.compress(jl)
+
                                                    
                                                     
                                                             with open(name, "wb") as f2:
@@ -397,13 +382,6 @@ class compression:
 
                                                             
                                     INFO=Extract
-                                    
-                                    
-                                    En3=int(INFO[:13],2)
-                                        #print(longl)
-                                    INFO=INFO[13:]
-                                        
-                                                           
                                     En2=int(INFO[:13],2)
                                         #print(longl)
                                     INFO=INFO[13:]
@@ -475,13 +453,11 @@ class compression:
                                                 long_F=len(INFO)
                                                 block=0
                                                 Save=0
-                                                C6=0
                                                 while Save!=1:
                                                       if Save==0:
                                                           
                                                         
                                                             O=INFO[block:block+3]
-                                                            C6+=1
                                                             
                                                             
                                                             
@@ -533,15 +509,10 @@ class compression:
                                                                 if En2!=0:
                                                                         CAll=0
                                                                         CAll=int(block)+int(En2)
-                                                                        if CAll<=long_F and C6%2==1:
-                                                                                EB1=INFO[block:block+En2]
-                                                                                ZE=ZE+EB1
-                                                                                block+=En2
-                                                                                
-                                                                        if CAll<=long_F and C6%2==0:
-                                                                                EB1=INFO[block:block+En3]
-                                                                                ZE=ZE+EB1
-                                                                                block+=En3                                                                    
+                                                                        if CAll<=long_F:
+                                                                            EB1=INFO[block:block+En2]
+                                                                            ZE=ZE+EB1
+                                                                            block+=En2
                                                                             
                                                             else:
                                                                    EB=INFO[block:block+En]
@@ -623,6 +594,9 @@ class compression:
                                             File_information5_2=Clear
                                          
                                             jl=width_bits3
+                                            
+                                            import paq
+                                            jl=paq.compress(jl)
                                            
                                    
                                             
