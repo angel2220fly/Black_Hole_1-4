@@ -274,7 +274,7 @@ class compression:
                                                                         
                                                                
 
-                                                                    if len(Z4)+8+13+13+len(C1) < long_11*8 or En1==8191:
+                                                                    if len(Z4)+8+13+13+8+len(C1) < long_11*8 or En1==8191:
                                                                             Find=1      
                                                                                                                                                                
                                                                             Extract1=1
