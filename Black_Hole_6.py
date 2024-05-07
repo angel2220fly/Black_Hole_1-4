@@ -590,8 +590,7 @@ class compression:
                                          
                                             jl=width_bits3
                                             
-                                            import paq
-                                            jl=paq.compress(jl)
+                                   
                                            
                                    
                                             
