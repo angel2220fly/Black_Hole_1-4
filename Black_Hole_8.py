@@ -280,7 +280,7 @@ class compression:
                                                                         
                                                                     #print((len(Z4)))
                                                                     C9=0
-                                                                    if len(Z4)+8+13+13+8+len(C1) < long_11*8 or En3==8191:
+                                                                    if len(Z4)+8+13+13+8+13+len(C1) < long_11*8 or En3==8191:
                                                                             Find=1      
                                                                                                                                                                
                                                                             Extract1=1
@@ -300,8 +300,10 @@ class compression:
                                                                                    M1=0
                                                                                    En=255
                                                                                    
+                                                                                   
                                                                              if En1==8191:                                                                    
                                                                                    En1+=3
+                                                                                   En1=0
                                                                                 
                                                                                    
                                                                              #print(En)
