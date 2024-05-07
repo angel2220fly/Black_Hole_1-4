@@ -236,7 +236,7 @@ class compression:
                                                                                    
                                                                             if C3!=1:
                                                                                    Z5="011"+C1+C
-                                                                                   if En1!=0:
+                                                                                   if En1!=0 and block+En1<=long_F:
                                                                                            Z5="011"+C1+C+INFO_A1
                                                                                            block+=En1
                                                                                    #print(Z5) 
@@ -506,10 +506,10 @@ class compression:
                                                                 if En2!=0:
                                                                         CAll=0
                                                                         CAll=int(block)+int(En2)
-                                                                        
-                                                                        EB1=INFO[block:block+En2]
-                                                                        ZE=ZE+EB1
-                                                                        block+=En2
+                                                                        if CAll<=long_F:
+                                                                            EB1=INFO[block:block+En2]
+                                                                            ZE=ZE+EB1
+                                                                            block+=En2
                                                                             
                                                             else:
                                                                    EB=INFO[block:block+En]
