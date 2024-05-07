@@ -30,6 +30,7 @@ class compression:
                     if name_input=="c":
                         i=1
                     if name_input=="e":
+                      
                         i=2
                     Clear=""
                     name = input("What is name of file? ")
@@ -234,7 +235,7 @@ class compression:
                                                                                    
                                                                             if C3!=1:
                                                                                    Z5="011"+C1+C
-                                                                                   if En1!=0:
+                                                                                   if En1!=0 and block+En1<=long_F:
                                                                                            Z5="011"+C1+C+INFO_A1
                                                                                            block+=En1
                                                                                    #print(Z5) 
@@ -339,7 +340,7 @@ class compression:
                                                             File_information5_2=Clear
                                                             name=name+".bin"
                                                             jl=width_bits3
-                                                            #(jl=paq.compress(jl)
+
                                                    
                                                     
                                                             with open(name, "wb") as f2:
@@ -503,10 +504,10 @@ class compression:
                                                                 if En2!=0:
                                                                         CAll=0
                                                                         CAll=int(block)+int(En2)
-                                                                        
-                                                                        EB1=INFO[block:block+En2]
-                                                                        ZE=ZE+EB1
-                                                                        block+=En2
+                                                                        if CAll<=long_F:
+                                                                            EB1=INFO[block:block+En2]
+                                                                            ZE=ZE+EB1
+                                                                            block+=En2
                                                                             
                                                             else:
                                                                    EB=INFO[block:block+En]
@@ -588,6 +589,9 @@ class compression:
                                             File_information5_2=Clear
                                          
                                             jl=width_bits3
+                                            
+                                            import paq
+                                            jl=paq.compress(jl)
                                            
                                    
                                             
