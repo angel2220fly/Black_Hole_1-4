@@ -151,12 +151,12 @@ class compression:
                                                     Extract1=0
                                                     
                                                     Find=0
-                                                    En=255
+                                                    En=63
                                                     Ci=1
                                                     M1=0
                                                     En1=0
-                                                    En3=0
-                                                    En4=0
+                                                    En3=62
+                                                    En4=51
                                                     C6=0
                                                     while Find!=1:
                                                                     #print(Find)
@@ -239,13 +239,13 @@ class compression:
                                                                                    
                                                                             if C3!=1:
                                                                                    Z5="011"+C1+C
-                                                                                   if En1!=0 and C6%2==1:
+                                                                                   if En1!=0 and C6%2==1 and block+En1<=long_F:
                                                                                            Z5="011"+C1+C+INFO_A1
                                                                                            block+=En1
                                                                                                                                                                             
-                                                                                   if En1!=0 and C6%2==0:
+                                                                                   if En1!=0 and C6%2==0 and block+En3<=long_F:
                                                                                            Z5="011"+C1+C+IN
-                                                                                           block+=En1                                                                                   #print(Z5) 
+                                                                                           block+=En3                                                                               #print(Z5) 
                                                                                        
                                                                                    
                                                                             if C3==1:
@@ -538,7 +538,7 @@ class compression:
                                                                                 ZE=ZE+EB1
                                                                                 block+=En2
                                                                                 
-                                                                        if C6%2==0:
+                                                                        if CAll<=long_F and C6%2==0:
                                                                                 EB1=INFO[block:block+En3]
                                                                                 ZE=ZE+EB1
                                                                                 block+=En3                                                                    
