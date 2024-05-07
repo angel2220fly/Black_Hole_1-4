@@ -30,8 +30,7 @@ class compression:
                     if name_input=="c":
                         i=1
                     if name_input=="e":
-                        import paq
-                        data=paq.decompress(data)
+                        
                         i=2
                     Clear=""
                     name = input("What is name of file? ")
@@ -84,6 +83,10 @@ class compression:
            
                     with open(name, "rb") as binary_file:
                         data = binary_file.read()
+                        
+                        if name_input=="e":
+                            import paq
+                            data=paq.decompress(data)
 
                         s=str(data)
                         long_11=len(data)
