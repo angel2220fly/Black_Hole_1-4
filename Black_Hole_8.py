@@ -151,12 +151,12 @@ class compression:
                                                     Extract1=0
                                                     
                                                     Find=0
-                                                    En=63
+                                                    En=255
                                                     Ci=1
                                                     M1=0
                                                     En1=0
-                                                    En3=62
-                                                    En4=51
+                                                    En3=0
+                                                    En4=0
                                                     C6=0
                                                     while Find!=1:
                                                                     #print(Find)
