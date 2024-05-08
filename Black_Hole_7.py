@@ -238,7 +238,7 @@ class compression:
                                                                                    
                                                                             if C3!=1:
                                                                                    Z5="011"+C1+C
-                                                                                   if En1!=0 and block+En1<=long_F:
+                                                                                   if En1!=0 and block+En1+En<=long_F:
                                                                                            Z5="011"+C1+C+INFO_A1
                                                                                            block+=En1
                                                                                    #print(Z5) 
