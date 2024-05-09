@@ -322,7 +322,13 @@ class compression:
                                                                     elif len(Z4)+8+13+13+8+len(C1) < long_11*8:
                                                                         
                                                                         input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"longl_F="+str(len(Z4))+" / "
-                                                                        #print(input_string)
+                                                                        #print(len(input_string))
+                                                                        if len(input_string)>10000:
+                                                                                                                                                                                                                                                                                                                                                                            smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2 = find_smallest_longl_F(input_string)
+                                                                                                                                                                                                                                                                                                                                                                            if smallest_longl_F is not None:
+                                                                                                                                                                                                                                                                                                                                                                                input_string= "En="+str(smallest_longl_F_en)+", "+"En2="+str(smallest_longl_F_en2)+", "+"longl_F="+str(smallest_longl_F)+" / "
+                                                                                                                                                                                                                                                                                       
+
                                                                         Find=3
                                                                         if M1==0:
                                                                             En-=1
