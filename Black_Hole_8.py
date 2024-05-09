@@ -510,6 +510,7 @@ class compression:
                                                 Save=0
                                                 while Save!=1:
                                                       if Save==0:
+                                                            C9=0
                                                           
                                                         
                                                             O=INFO[block:block+3]
@@ -568,6 +569,7 @@ class compression:
                                                                             EB1=INFO[block:block+En2]
                                                                             ZE=ZE+EB1
                                                                             block+=En2
+                                                                            C9=1
                                                                             
                                                             else:
                                                                    EB=INFO[block:block+En]
@@ -605,9 +607,9 @@ class compression:
                                                 
                                                 long_L=len(Z4)
                                                 #print(long_L)
-                                             
-                                                Z4=Z4[:long_L-En]
-                                                Z4+=Z2Z
+                                                if C9==0:
+                                                    Z4=Z4[:long_L-En]
+                                                    Z4+=Z2Z
                                                 
                                                     
                                                 N3=1
