@@ -16,32 +16,7 @@ class compression:
               
                
 
-
-                import re
-                
-                def find_smallest_longl_F(input_string):
-                    # Extract all 'En', 'En2', and 'longl_F' values
-                    pattern = r'En=(\d+), En2=(\d+), longl_F=(\d+)'
-                    matches = re.findall(pattern, input_string)
-                
-                    # Initialize variables to keep track of the smallest longl_F value and its corresponding En and En2
-                    smallest_longl_F = float('inf')
-                    smallest_longl_F_en = None
-                    smallest_longl_F_en2 = None
-                
-                    # Iterate through matches to find the smallest longl_F value
-                    for en, en2, longl_f in matches:
-                        longl_f_value = int(longl_f)
-                        if longl_f_value < smallest_longl_F:
-                            smallest_longl_F = longl_f_value
-                            smallest_longl_F_en = en
-                            smallest_longl_F_en2 = en2
-                                                               
-                  
-                    if smallest_longl_F_en is not None:
-                        return smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2                                                                      
                                    
-                                     
                   
                                                                       
                                    
@@ -181,7 +156,6 @@ class compression:
                                                     Ci=1
                                                     M1=0
                                                     En1=0
-                                                    input_string=""
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -297,47 +271,12 @@ class compression:
                                                                         
                                                                
 
-                                                                    if  Find==2 or En1==8191:
-                                                                                Find=1
-                                                                                Extract1=1                                                             
-                                                                                               
-                                                                    
-                                                                    elif En1==8190 and Find==3:
-                                                                                                                                                                                                                                                                                                                                                                            smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2 = find_smallest_longl_F(input_string)
-                                                                                                                                                                                                                                                                                                                                                                            if smallest_longl_F is not None:
-                                                                                                                                                                                                                                                                                                                                                                                En=int(smallest_longl_F_en)
-                                                                                                                                                                                                                                                                                                                                                                                En1=int(smallest_longl_F_en2)
-                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                #print(En)
-                                                                                                                                                                                                                                                                                                                                                                                #print(En1)
-                                                                                                                                                                                                                                                                                                                                                                                Find=2                                                                     
-                                                                     #print(len(Z4))
-                                                                    elif len(Z4)+8+13+13+8+len(C1) < long_11*8:
-                                                                        
-                                                                        input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"longl_F="+str(len(Z4))+" / "
-                                                                        #print(input_string)
-                                                                        Find=3
-                                                                        if M1==0:
-                                                                            En-=1
-                                                                             
-                                                                            
-                                                                        if En==10 or M1==1:
-                                                                            En+=1
-                                                                            M1=1
-                                                                                      
-                                                                        if En==8191:                                                                    
-                                                                            En1+=1
-                                                                            M1=0
-                                                                            En=255
-                                                                             #print(En)
-                                                                             #print(len(Z4))   
-                                                                             
+                                                                    if len(Z4)+8+13+13+8+len(C1) < long_11*8 or En1==8191:
+                                                                            Find=1      
+                                                                                                                                                               
+                                                                            Extract1=1
+                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                            
                                                                     else:
                                                                              if M1==0:
                                                                                  En-=1
@@ -350,8 +289,9 @@ class compression:
                                                                              if En==8191:                                                                    
                                                                                    En1+=1
                                                                                    M1=0
-                                                                                   En=255                                                                                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+                                                                                   En=255
+                                                                             #print(En)
+                                                                             #print(len(Z4))                                                                                                                                                                                                                   
                                                     if Ci==1:               
                                                             
                                                            
@@ -510,10 +450,10 @@ class compression:
                                                 Save=0
                                                 while Save!=1:
                                                       if Save==0:
-                                                            C9=0
                                                           
-                                                        
+                                                            C9=0                                                        
                                                             O=INFO[block:block+3]
+
                                                             
                                                             
                                                             
