@@ -150,6 +150,7 @@ class compression:
                                                 
                                                 
                                                     Extract1=0
+                                                    C1=""
                                                     
                                                     Find=0
                                                     En=255
@@ -167,6 +168,7 @@ class compression:
                                                                     
                                                                     while block<long_F:
                                                                         INFO_A=INFO[block:block+En]
+                                                                        
                                                                         if En1!=0:
                                                                                 INFO_A1=INFO[block+En:block+En+En1]
                                                                         longl=len(INFO_A)
@@ -269,8 +271,9 @@ class compression:
                                                                         #print(Find)
                                                                         block+=En
                                                                         
-                                                               
-
+                                                                 
+                                                                    
+                                                                    
                                                                     if len(Z4)+8+13+13+8+len(C1) < long_11*8 or En1==8191:
                                                                             Find=1      
                                                                                                                                                                
