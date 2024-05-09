@@ -321,24 +321,18 @@ class compression:
                                                                         input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"longl_F="+str(len(Z4))+" / "
                                                                         #print(input_string)
                                                                         Find=3
-                                                                       
-                                                                        
-
-                                                                                                                                                                                                                           
-                                                                                                                                                                                                                                                                                            
-                                                                    else:
-                                                                             if M1==0:
-                                                                                 En-=1
+                                                                        if M1==0:
+                                                                            En-=1
                                                                              
                                                                             
-                                                                             if En==10 or M1==1:
-                                                                                 En+=1
-                                                                                 M1=1
+                                                                        if En==10 or M1==1:
+                                                                            En+=1
+                                                                            M1=1
                                                                                       
-                                                                             if En==8191:                                                                    
-                                                                                   En1+=1
-                                                                                   M1=0
-                                                                                   En=255
+                                                                        if En==8191:                                                                    
+                                                                            En1+=1
+                                                                            M1=0
+                                                                            En=255
                                                                              #print(En)
                                                                              #print(len(Z4))                                                                                                                                                                                                                   
                                                     if Ci==1:               
