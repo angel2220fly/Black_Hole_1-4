@@ -336,7 +336,22 @@ class compression:
                                                                             M1=0
                                                                             En=255
                                                                              #print(En)
-                                                                             #print(len(Z4))                                                                                                                                                                                                                   
+                                                                             #print(len(Z4))   
+                                                                             
+                                                                    else:
+                                                                             if M1==0:
+                                                                                 En-=1
+                                                                             
+                                                                            
+                                                                             if En==10 or M1==1:
+                                                                                 En+=1
+                                                                                 M1=1
+                                                                                      
+                                                                             if En==8191:                                                                    
+                                                                                   En1+=1
+                                                                                   M1=0
+                                                                                   En=255                                                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                     if Ci==1:               
                                                             
                                                            
