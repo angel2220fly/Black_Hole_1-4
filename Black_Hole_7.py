@@ -159,6 +159,7 @@ class compression:
                                                     Ci=1
                                                     M1=0
                                                     En1=0
+                                                    C1=""
                                                     while Find!=1:
                                                                     #print(Find)
                     
