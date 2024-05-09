@@ -35,9 +35,11 @@ class compression:
                         if longl_f_value < smallest_longl_F:
                             smallest_longl_F = longl_f_value
                             smallest_longl_F_en = en
-                            smallest_longl_F_en2 = en2                                   
+                            smallest_longl_F_en2 = en2
+                                                               
                   
-                                                                      
+                    if smallest_longl_F_en is not None:
+                        return smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2                                                                      
                                    
                                      
                   
@@ -300,15 +302,27 @@ class compression:
                                                                                 Extract1=1                                                             
                                                                                                
                                                                     
-                                                                    elif En1==8190:
+                                                                    elif En1==8190 and Find==3:
+                                                                                                                                                                                                                                                                                                                                                                            #print(Find)
+                                                                                                                                                                                                                                                                                                                                                                            smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2 = find_smallest_longl_F(input_string)
+                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                                                                                                                             if smallest_longl_F is not None:
                                                                                                                                                                                                                                                                                                                                                                                 En=int(smallest_longl_F_en)
                                                                                                                                                                                                                                                                                                                                                                                 En1=int(smallest_longl_F_en2)
+                                                                                                                                                                                                                                                                                                                                                                                #print(En)
+                                                                                                                                                                                                                                                                                                                                                                                #print(En1)
                                                                                                                                                                                                                                                                                                                                                                                 Find=2                                                                     
                                                                      #print(len(Z4))
                                                                     elif len(Z4)+8+13+13+8+len(C1) < long_11*8:
-                                                                        input_string+= "En="+str(En)+","+"En2="+str(En1)+","+"longl_F"+str(longl_F)+" / "
-                                                                        smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2 = find_smallest_longl_F(input_string)
+                                                                        
+                                                                        input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"longl_F="+str(len(Z4))+" / "
+                                                                        #print(input_string)
+                                                                        Find=3
+                                                                       
+                                                                        
 
                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                                             
