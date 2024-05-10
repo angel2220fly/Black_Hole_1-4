@@ -184,7 +184,8 @@ class compression:
                                                     input_string=""
                                                     C1=""
                                                     C9=0
-                                                    En3=8188
+                                                    En3=0
+                                                    En4=0
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -347,11 +348,19 @@ class compression:
                                                                             En1+=1
                                                                             M1=0
                                                                             En=255
+                                                                            
+                                                                        En4+=1
+                                                                        if En4== 8188:
+                                                                               En3=8188
 
+                                                                                 
+                                                                             
+                                                                                      
                                                                         if En1==8189:
                                                                                  En3-=1
                                                                                  if En3==9:
-                                                                                     En3=9                                                                 
+                                                                                 
+                                                                                     En3=9                                                                                                                            
                                                                                                
                                                                                                                                                           
                                                                                                                                                                                                                                                                                                                     #print(En)
@@ -370,10 +379,19 @@ class compression:
                                                                                    En1+=1
                                                                                    M1=0
                                                                                    En=255
+                                                                             En4+=1
+                                                                             if En4== 8188:
+                                                                                 En3=8188
+                                                                                 
+
+                                                                                 
+                                                                             
                                                                                       
                                                                              if En1==8189:
                                                                                  En3-=1
+                                                                                
                                                                                  if En3==9:
+                                                                                 
                                                                                      En3=9                                                                 
                                                               
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
