@@ -372,7 +372,7 @@ class compression:
                                                                                    En=255
                                                                                       
                                                                              if En1==8189:
-                                                                                 En3=En1-1
+                                                                                 En3-=1
                                                                                  if En3==9:
                                                                                      En3=9                                                                 
                                                               
