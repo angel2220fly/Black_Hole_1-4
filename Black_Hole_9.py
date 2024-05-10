@@ -307,12 +307,12 @@ class compression:
                                                                         if C9==1: #print(Find)
                                                                             block+=En-1                                                             
 
-                                                                    if  Find==2 or En3==9:
+                                                                    if  Find==2 or En6==8186:
                                                                                 Find=1
                                                                                 Extract1=1                                                             
                                                                                                
                                                                     
-                                                                    elif En3==10 and Find==3:
+                                                                    elif En3==8185 and Find==3:
                                                                         smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2 = find_smallest_longl_F(input_string)
                                                                         if smallest_longl_F is not None:
                                                                             En=int(smallest_longl_F_en)
