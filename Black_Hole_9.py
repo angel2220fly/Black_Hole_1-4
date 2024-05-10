@@ -188,6 +188,7 @@ class compression:
                                                     En4=0
                                                     En5=0
                                                     En6=0
+                                                    En7=8184
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -351,22 +352,18 @@ class compression:
                                                                            
                                                                             En=255
                                                                             
-                                                                        En4+=1
-                                                                        if En4== 8188 and En5==0:
-                                                                               En3=8188
-                                                                               En5=1
-
-                                                                                 
-                                                                             
-                                                                                      
-                                                                        if En1==8189:
-                                                                                 En3-=1
+                                                                        if En1==En7: 
+                                                                                 En3=En1-1
                                                                                  if En3==9:
-                                                                                 
                                                                                      En3=9
-                                                                                     En-=1
                                                                                      En6+=1
-                                                                                     En5=0                                                                 
+                                                                                     En7-=1
+                                                                                     
+                                                                        if En1<=En3:
+                                                                                 En1=En3+2                                                                                                                                                                                                                    
+                                                                            
+                                                                        if En<=En3:
+                                                                                 En=En3+1                                                                                
                                        
                                                                                                
                                                                                                                                                           
@@ -386,25 +383,22 @@ class compression:
                                                                                    En1+=1
                                                                                    
                                                                                    En=255
-                                                                             En4+=1
-                                                                             if En4== 8188 and En5==0:
-                                                                                 En3=8188
-                                                                                 En5=1
-                                                                                 
-                                                                                 
-
-                                                                                 
-                                                                             
-                                                                                      
-                                                                             if En1==8189:
-                                                                                 En3-=1
-                                                                                
+                                                                             if En1==En7:
+                                                                                 En3=En1-1
                                                                                  if En3==9:
-                                                                                 
                                                                                      En3=9
-                                                                                     En-=1
-                                                                                     En6+=1
-                                                                                     En5=0                                                                 
+                                                                             if En1==En7:
+                                                                                 En3=En1-1
+                                                                                 if En3==9:
+                                                                                     En3=9
+                                                                             En6+=1
+                                                                             En7-=1
+                                                                                     
+                                                                             if En1<=En3:
+                                                                                 En1=En3+2                                                                                                                                                                                                                    
+                                                                            
+                                                                             if En<=En3:
+                                                                                 En=En3+1                                                                                                                                                                                                                                                                                                       
                                                               
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
