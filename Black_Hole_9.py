@@ -184,7 +184,7 @@ class compression:
                                                     input_string=""
                                                     C1=""
                                                     C9=0
-                                                    En3=0
+                                                    En3=8188
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -349,7 +349,7 @@ class compression:
                                                                             En=255
 
                                                                         if En1==8189:
-                                                                                 En3=En1-1
+                                                                                 En3-=1
                                                                                  if En3==9:
                                                                                      En3=9                                                                 
                                                                                                
