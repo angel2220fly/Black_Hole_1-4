@@ -186,6 +186,7 @@ class compression:
                                                     C9=0
                                                     En3=0
                                                     En4=0
+                                                    En5=0
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -350,8 +351,9 @@ class compression:
                                                                             En=255
                                                                             
                                                                         En4+=1
-                                                                        if En4== 8188:
+                                                                        if En4== 8188 and En5==0:
                                                                                En3=8188
+                                                                               En5=1
 
                                                                                  
                                                                              
@@ -380,8 +382,10 @@ class compression:
                                                                                    M1=0
                                                                                    En=255
                                                                              En4+=1
-                                                                             if En4== 8188:
+                                                                             if En4== 8188 and En5==0:
                                                                                  En3=8188
+                                                                                 En5=1
+                                                                                 
                                                                                  
 
                                                                                  
