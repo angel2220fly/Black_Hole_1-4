@@ -187,6 +187,7 @@ class compression:
                                                     En3=0
                                                     En4=0
                                                     En5=0
+                                                    En6=0
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -347,7 +348,7 @@ class compression:
                                                                                       
                                                                         if En==8191:                                                                    
                                                                             En1+=1
-                                                                            M1=0
+                                                                           
                                                                             En=255
                                                                             
                                                                         En4+=1
@@ -362,7 +363,11 @@ class compression:
                                                                                  En3-=1
                                                                                  if En3==9:
                                                                                  
-                                                                                     En3=9                                                                                                                            
+                                                                                     En3=9
+                                                                                     En-=1
+                                                                                     En6+=1
+                                                                                     En5=0                                                                 
+                                       
                                                                                                
                                                                                                                                                           
                                                                                                                                                                                                                                                                                                                     #print(En)
@@ -379,7 +384,7 @@ class compression:
                                                                                       
                                                                              if En==8191:                                                                    
                                                                                    En1+=1
-                                                                                   M1=0
+                                                                                   
                                                                                    En=255
                                                                              En4+=1
                                                                              if En4== 8188 and En5==0:
@@ -396,7 +401,10 @@ class compression:
                                                                                 
                                                                                  if En3==9:
                                                                                  
-                                                                                     En3=9                                                                 
+                                                                                     En3=9
+                                                                                     En-=1
+                                                                                     En6+=1
+                                                                                     En5=0                                                                 
                                                               
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
