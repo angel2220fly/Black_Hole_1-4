@@ -203,7 +203,7 @@ class compression:
                                                     En1=0
                                                     input_string=""
                                                     C1=""
-                                                    En3=1
+                                                    En3=0
                                                     while Find!=1:
                                                                     #print(Find)
                     
