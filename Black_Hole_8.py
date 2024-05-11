@@ -18,6 +18,21 @@ class compression:
 
 
                 import re
+
+                def Count_adds(M1,En,En1):
+                        if M1==0:
+                                En-=1
+                                                                             
+                                                                            
+                        if En==10 or M1==1:
+                                En+=1
+                                M1=1
+                                                                                      
+                        if En==8191:                                                                    
+                                En1+=1
+                                M1=0
+                                En=255
+                        return M1,En,En1
                 
                 def find_smallest_longl_F(input_string):
                     # Extract all 'En', 'En2', and 'longl_F' values
@@ -329,34 +344,15 @@ class compression:
                                                                                                                                                                                                                                                                                        
 
                                                                         Find=3
-                                                                        if M1==0:
-                                                                            En-=1
-                                                                             
-                                                                            
-                                                                        if En==10 or M1==1:
-                                                                            En+=1
-                                                                            M1=1
-                                                                                      
-                                                                        if En==8191:                                                                    
-                                                                            En1+=1
-                                                                            M1=0
-                                                                            En=255
+                                                                        M1,En,En1=Count_adds(M1,En,En1)
+                                                                        
+                                                                        
                                                                              #print(En)
                                                                              #print(len(Z4))   
                                                                              
                                                                     else:
-                                                                             if M1==0:
-                                                                                 En-=1
+                                                                             M1,En,En1=Count_adds(M1,En,En1)
                                                                              
-                                                                            
-                                                                             if En==10 or M1==1:
-                                                                                 En+=1
-                                                                                 M1=1
-                                                                                      
-                                                                             if En==8191:                                                                    
-                                                                                   En1+=1
-                                                                                   M1=0
-                                                                                   En=255                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
                                                     if Ci==1:               
                                                             
