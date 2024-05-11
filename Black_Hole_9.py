@@ -33,6 +33,9 @@ class compression:
                                 M1=0
                                 En=255
                         if En1==8191:
+                                En=255
+                                En1=0
+                                M1=0
                                 En3+=1
                         return M1,En,En1,En3
                 
@@ -336,7 +339,7 @@ class compression:
                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
-                                                                    elif len(Z4)+8+13+13+8+3+len(C1) < long_11*8:
+                                                                    elif len(Z4)+8+13+13+8+len(C1) < long_11*8:
                                                                         
                                                                         input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"longl_F="+str(len(Z4))+" / "
                                                                         #print(len(input_string))
