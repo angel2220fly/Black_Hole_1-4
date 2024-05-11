@@ -203,7 +203,7 @@ class compression:
                                                     En1=0
                                                     input_string=""
                                                     C1=""
-                                                    En3=0
+                                                    En3=1
                                                     while Find!=1:
                                                                     #print(Find)
                     
@@ -285,7 +285,7 @@ class compression:
                                                                                    Z5="011"+C1+C
                                                                                    if En1!=0 and block+En1+En-En3<=long_F:
                                                                                            Z5="011"+C1+C+INFO_A1
-                                                                                           block+=En1
+                                                                                           block+=En1-En3
                                                                                    #print(Z5) 
                                                                                        
                                                                                    
