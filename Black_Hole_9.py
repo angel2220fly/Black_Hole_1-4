@@ -370,8 +370,8 @@ class compression:
                                                                         if len(input_string)>10000:
                                                                          smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2, smallest_longl_F_en3 = find_values(input_string)
                                                                          if smallest_longl_F is not None:
-                                                                                                                                                                                                                                                                                       input_string= "En="+str(smallest_longl_F_en)+", "+"En2="+str(smallest_longl_F_en2)+", "+"En3="+str(smallest_longl_F_en3)+", "+"Longl_F="+str(smallest_longl_F)+" / "
-                                                                                                                                                                                                                                                                                       #print(input_string)
+                                                                             input_string= "En="+str(smallest_longl_F_en)+", "+"En2="+str(smallest_longl_F_en2)+", "+"En3="+str(smallest_longl_F_en3)+", "+"Longl_F="+str(smallest_longl_F)+" / "
+                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                        
 
                                                                         Find=3
