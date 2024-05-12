@@ -36,10 +36,7 @@ class compression:
                                 En1+=1
                                 M1=0
                                 En=255
-                        if En1==8191:
-                                En=255
-                                En1=0
-                                M1=0
+                        
                                 
                         return M1,En,En1,En3
                 
