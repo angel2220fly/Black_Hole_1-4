@@ -42,30 +42,24 @@ class compression:
                 
 
              
+             
                 import re                    
-                def find_values(input_string):
-                            # Extract all 'En', 'En2', 'En3', and 'Longl_F' values
-                            pattern = r'En=(\d+), En2=(\d+), En3=(\d+), Longl_F=(\d+)'
-                            matches = re.findall(pattern, input_string)
-                        
-                            # Initialize variables to keep track of the smallest Longl_F value and its corresponding En, En2, and En3
-                            smallest_longl_F = float('inf')
-                            smallest_longl_F_en = None
-                            smallest_longl_F_en2 = None
-                            smallest_longl_F_en3 = None
-                        
-                            # Iterate through matches to find the smallest Longl_F value
-                            for en, en2, en3, longl_f in matches:
-                                longl_f_value = int(longl_f)
-                                if longl_f_value < smallest_longl_F:
-                                    smallest_longl_F = longl_f_value
-                                    smallest_longl_F_en = en
-                                    smallest_longl_F_en2 = en2
-                                    smallest_longl_F_en3 = en3
-                        
-                            # Return the result
-                            if smallest_longl_F_en is not None:
-                                return smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2, smallest_longl_F_en3
+               
+                                
+                def find_smallest_longl_F_values(input_string):
+                    # Extract all 'En', 'En2', 'En3', and 'Longl_F' values
+                    pattern = r'En=(\d+), En2=(\d+), En3=(\d+), Longl_F=(\d+)'
+                    matches = re.findall(pattern, input_string)
+                
+                    # Convert the extracted strings to tuples of integers
+                    longl_F_values = [(int(en), int(en2), int(en3), int(longl_f)) for en, en2, en3, longl_f in matches]
+                
+                    if longl_F_values:
+                        # Find the smallest 'Longl_F' value and its corresponding variables
+                        smallest_longl_F_values = min(longl_F_values, key=lambda x: x[3])
+                        return smallest_longl_F_values
+                    else:
+                        return None
   
 
 # Example usage
@@ -343,11 +337,13 @@ class compression:
                                                                                                
                                                                     
                                                                     elif En1==6 and Find==3:
-                                                                        smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2, smallest_longl_F_en3 = find_values(input_string)
-                                                                        if smallest_longl_F is not None:
-                                                                            En=int(smallest_longl_F_en)
-                                                                            En1=int(smallest_longl_F_en2)
-                                                                            En3=int(smallest_longl_F_en3)
+                                                                        smallest_longl_F_values = find_smallest_longl_F_values(input_string)
+                                                                        
+                                                                        if smallest_longl_F_values:
+                                                                            en, en2, en3, longl_F = smallest_longl_F_values
+                                                                            En=int(en)
+                                                                            En1=int(en2)
+                                                                            En3=int(en3)
                                                                             Find=2     
                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
@@ -369,9 +365,12 @@ class compression:
                                                                         
                                                                         
                                                                         if len(input_string)>10000:
-                                                                         smallest_longl_F, smallest_longl_F_en, smallest_longl_F_en2, smallest_longl_F_en3 = find_values(input_string)
-                                                                         if smallest_longl_F is not None:
-                                                                             input_string= "En="+str(smallest_longl_F_en)+", "+"En2="+str(smallest_longl_F_en2)+", "+"En3="+str(smallest_longl_F_en3)+", "+"Longl_F="+str(smallest_longl_F)+" / "
+                                                                         smallest_longl_F_values = find_smallest_longl_F_values(input_string)
+                                                                         if smallest_longl_F_values:
+                                                                             en, en2, en3, longl_F = smallest_longl_F_values
+                                                                             input_string= "En="+str(en)+", "+"En2="+str(en2)+", "+"En3="+str(en3)+", "+"Longl_F="+str(longl_F)+" / "
+                                                                             #print(input_string)
+                                                                             
                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                        
 
