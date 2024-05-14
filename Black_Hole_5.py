@@ -419,7 +419,7 @@ class compression:
                                                                        #print(Long_PM1)
                                                                        N3=1                                                                       
                                                                        if N3==1:
-                                                                               File_information5_17="1"+Cl4+CL3+CL2+CL1+Z4
+                                                                               File_information5_17="1"+CL4+CL3+CL2+CL1+Z4
                                                                                long_1=len(File_information5_17)
                                                                                add_bits=""
                                                                                count_bits=8-long_1%8
