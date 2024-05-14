@@ -90,7 +90,8 @@ class compression:
                       
                         i=2
                     Clear=""
-                    name = input("What is name of file? ")
+                    name = input("What is name of file input? ")
+                    name_output= input("What is name of file output? ")
 
                         
     
@@ -437,7 +438,7 @@ class compression:
 
                                                    
                                                     
-                                                            with open(name, "wb") as f2:
+                                                            with open(name_output, "wb") as f2:
                                                                 f2.write(jl)
                                                             
                                                             x2 = time()
@@ -697,7 +698,7 @@ class compression:
                                             
 
                                             
-                                            with open(name, "wb") as f2:
+                                            with open(name_output, "wb") as f2:
                                                 f2.write(width_bits3)
                                             x2 = time()
                                             x3=x2-x
