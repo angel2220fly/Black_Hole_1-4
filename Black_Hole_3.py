@@ -329,12 +329,12 @@ class compression:
                                                                         
                                                                
 
-                                                                    if  Find==2 or En3==7:
+                                                                    if  Find==2 or En1==8191:
                                                                                 Find=1
                                                                                 Extract1=1                                                             
                                                                                                
                                                                     
-                                                                    elif En3==6 and Find==3:
+                                                                    elif En1==8190 and Find==3:
                                                                         smallest_longl_F_values = find_smallest_longl_F_values(input_string)
                                                                         if smallest_longl_F_values:
                                                                             en, en2, en3, longl_F = smallest_longl_F_values
@@ -351,7 +351,7 @@ class compression:
                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
-                                                                    elif len(Z4)+8+13+13+8+3+len(C1) < long_11*8:
+                                                                    elif len(Z4)+8+13+13+8+len(C1) < long_11*8:
                                                                         
                                                                         
                                                                         input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"En3="+str(En3)+", "+"Longl_F="+str(len(Z4))+" / "
@@ -406,7 +406,7 @@ class compression:
                                                                        #print(Long_PM1)
                                                                        N3=1                                                                       
                                                                        if N3==1:
-                                                                               File_information5_17="1"+CL4+CL3+CL2+CL1+Z4
+                                                                               File_information5_17="1"+CL3+CL2+CL1+Z4
                                                                                long_1=len(File_information5_17)
                                                                                add_bits=""
                                                                                count_bits=8-long_1%8
