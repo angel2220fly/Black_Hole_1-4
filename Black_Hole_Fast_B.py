@@ -355,7 +355,7 @@ class compression:
                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
-                                                                    elif len(Z4)+8+13+3+8+3+len(C1) < long_11*8:
+                                                                    elif len(Z4)+8+13+3+8+len(C1) < long_11*8:
                                                                         
                                                                         
                                                                         input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"En3="+str(En3)+", "+"Longl_F="+str(len(Z4))+" / "
