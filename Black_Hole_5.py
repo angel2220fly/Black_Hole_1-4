@@ -219,7 +219,9 @@ class compression:
                                                     
                                                     while Find!=1:
                                                                     #Reverse
+                                                                                                                                                               
                                                                     bi=0
+                                                                    M1,En,En1,En3=Count_adds(M1,En,En1,En3)
                                                                     I2=I4
                                                                     I3=len(INFO)
                                                                     I5=""
@@ -389,15 +391,7 @@ class compression:
                                                                                                                                                                                                                                                                                        
 
                                                                         Find=3
-                                                                        M1,En,En1,En3=Count_adds(M1,En,En1,En3)
-                                                                        
-                                                                        
-                                                                             #print(En)
-                                                                             #print(len(Z4))   
-                                                                             
-                                                                    else:
-                                                                             M1,En,En1,En3=Count_adds(M1,En,En1,En3)
-                                                                             
+                                                                           
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
                                                     if Ci==1:               
                                                             
