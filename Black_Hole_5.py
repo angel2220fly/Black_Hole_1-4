@@ -88,7 +88,8 @@ class compression:
                       
                         i=2
                     Clear=""
-                    name = input("What is name of file? ")
+                    name = input("What is name of file input? ")
+                    name_output= input("What is name of file output? ")
 
                         
     
@@ -374,14 +375,14 @@ class compression:
                                                                         
                                                                         
                                                                         input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"En3="+str(En3)+", "+"Longl_F="+str(len(Z4))+" / "
-                                                                        #print(input_string)
+                                                                        #print(len(input_string))
                                                                    
                                                                         
                                                                     
                                                                         
                                                                         
                                                                         
-                                                                        if len(input_string)>10000:
+                                                                        if len(input_string)>100:
                                                                          smallest_longl_F_values = find_smallest_longl_F_values(input_string)
                                                                          if smallest_longl_F_values:
                                                                              en, en2, en3, longl_F = smallest_longl_F_values
@@ -446,7 +447,7 @@ class compression:
 
                                                    
                                                     
-                                                            with open(name, "wb") as f2:
+                                                            with open(name_output, "wb") as f2:
                                                                 f2.write(jl)
                                                             
                                                             x2 = time()
@@ -721,7 +722,7 @@ class compression:
                                             long_extract=len(name)
                                             name=name[:long_extract-4]
                                             
-                                            with open(name, "wb") as f2:
+                                            with open(name_output, "wb") as f2:
                                                 f2.write(width_bits3)
                                             x2 = time()
                                             x3=x2-x
