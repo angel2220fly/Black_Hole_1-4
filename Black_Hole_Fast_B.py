@@ -229,7 +229,7 @@ class compression:
                                                                     while block<long_F:
                                                                         INFO_A=INFO[block:block+En]
                                                                         if En1!=0:
-                                                                                INFO_A1=INFO[block+En:block+En+En1-En3]
+                                                                                INFO_A1=INFO[block+En:block+En+En1]
                                                                         longl=len(INFO_A)
                                                                         
                                                                         Counts=int(INFO_A,2)
