@@ -38,10 +38,10 @@ class compression:
                                 En=255
                                 En1=0
                                 M1=0
-                        En3+=1
+                                En3+=1
                         if En3==8191:
                                 En3=1
-                        En4+=1
+                                En4+=1
                                 
                          
                         
