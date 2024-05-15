@@ -403,7 +403,7 @@ class compression:
                                                                          if smallest_longl_F_values:
                                                                              en, en2, en3, en4, longl_F = smallest_longl_F_values
                                                                              input_string= "En="+str(en)+", "+"En2="+str(en2)+", "+"En3="+str(en3)+", "+"En4="+str(en4)+", "+"Longl_F="+str(longl_F)+" / "
-                                                                             print(input_string)
+                                                                             #print(input_string)
                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                        
 
