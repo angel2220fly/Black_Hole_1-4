@@ -38,10 +38,10 @@ class compression:
                                 En=255
                                 En1=0
                                 M1=0
-                                En3+=1
+                        En3+=1
                         if En3==8191:
                                 En3=1
-                                En4+=1
+                        En4+=1
                                 
                          
                         
@@ -227,10 +227,22 @@ class compression:
                                                     En4=1
                                                     I4=INFO# reverse
                                                     En5=0
+                                                    from qiskit import QuantumCircuit
+                                                    circuit = QuantumCircuit(1000)
                                                     while Find!=1:
                                                                     #Reverse
                                                                                                                                                                
                                                                     bi=0
+                                                                    En=int(En)
+                                                                    QuantumCircuit(En)
+                                                                    En=int(En2)
+                                                                    QuantumCircuit(En2)
+                                                                    
+                                                                    En=int(En3)
+                                                                    QuantumCircuit(En3)
+                                                                    En=int(En4)
+                                                                    QuantumCircuit(En4)                                                                    
+                                                                    
                                                                     M1,En,En1,En3,En4=Count_adds(M1,En,En1,En3,En4)
                                                                     I2=I4
                                                                     I3=len(INFO)
@@ -403,7 +415,7 @@ class compression:
                                                                          if smallest_longl_F_values:
                                                                              en, en2, en3, en4, longl_F = smallest_longl_F_values
                                                                              input_string= "En="+str(en)+", "+"En2="+str(en2)+", "+"En3="+str(en3)+", "+"En4="+str(en4)+", "+"Longl_F="+str(longl_F)+" / "
-                                                                             #print(input_string)
+                                                                             print(input_string)
                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                        
 
