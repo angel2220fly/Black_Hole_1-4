@@ -41,7 +41,7 @@ class compression:
                         En4+=1
                         if En3==15:
                                 En3=1
-                                En4=1
+                                
                          
                         
                         
