@@ -19,25 +19,33 @@ class compression:
 
                
 
-                def Count_adds(M1,En,En1,En3):
+                def Count_adds(M1,En,En1,En3,En4):
                         if M1==0:
                                 En-=1
                                                                              
                                                                             
-                        if En==3 or M1==1:
+                        if En==10 or M1==1:
                                 En+=1
                                 M1=1
                                                                                       
                         if En==8191:                                                                    
                                 En1+=1
+                                #print(En1)
                                 M1=0
                                 En=255
-                        if En1==8191:
+                        En3+=1
+                        if En1==7:
                                 En=255
                                 En1=0
                                 M1=0
-                                En3+=1
-                        return M1,En,En1,En3
+                        En4+=1
+                        if En3==15 or En4==15:
+                                En3=1
+                                En4=1
+                         
+                        
+                        
+                        return M1,En,En1,En3,En4
                 
 
              
@@ -45,16 +53,16 @@ class compression:
                
                                 
                 def find_smallest_longl_F_values(input_string):
-                    # Extract all 'En', 'En2', 'En3', and 'Longl_F' values
-                    pattern = r'En=(\d+), En2=(\d+), En3=(\d+), Longl_F=(\d+)'
+                    # Extract all 'En', 'En2', 'En3', 'En4', and 'Longl_F' values
+                    pattern = r'En=(\d+), En2=(\d+), En3=(\d+), En4=(\d+), Longl_F=(\d+)'
                     matches = re.findall(pattern, input_string)
                 
                     # Convert the extracted strings to tuples of integers
-                    longl_F_values = [(int(en), int(en2), int(en3), int(longl_f)) for en, en2, en3, longl_f in matches]
+                    longl_F_values = [(int(en), int(en2), int(en3), int(en4), int(longl_f)) for en, en2, en3, en4, longl_f in matches]
                 
                     if longl_F_values:
                         # Find the smallest 'Longl_F' value and its corresponding variables
-                        smallest_longl_F_values = min(longl_F_values, key=lambda x: x[3])
+                        smallest_longl_F_values = min(longl_F_values, key=lambda x: x[4])
                         return smallest_longl_F_values
                     else:
                         return None
@@ -215,23 +223,30 @@ class compression:
                                                     input_string=""
                                                     C1=""
                                                     En3=1
-                                                    
+                                                    En4=1
                                                     I4=INFO# reverse
-                                                    
+                                                    En5=0
                                                     while Find!=1:
                                                                     #Reverse
                                                                                                                                                                
                                                                     bi=0
-                                                                    M1,En,En1,En3=Count_adds(M1,En,En1,En3)
+                                                                    M1,En,En1,En3,En4=Count_adds(M1,En,En1,En3,En4)
                                                                     I2=I4
                                                                     I3=len(INFO)
                                                                     I5=""
+                                                                    #print(En1)
                                                                     while bi<I3:
-                                                                        I=I2[bi:bi+En3]
-                                                                        I6=I[::-1]
-                                                                        I5+=I6
-                                                                        bi+=En3
-                                                                        
+                                                                        En5+=1
+                                                                        if En5%2==1:
+                                                                                I=I2[bi:bi+En3]
+                                                                                I6=I[::-1]
+                                                                                I5+=I6
+                                                                                bi+=En3
+                                                                        if En5%2==0:
+                                                                                I=I2[bi:bi+En4]
+                                                                                I6=I[::-1]
+                                                                                I5+=I6
+                                                                                bi+=En4       
                                                                         
                                                                         
                                                                     INFO=I5
@@ -349,15 +364,15 @@ class compression:
                                                                         
                                                                
 
-                                                                    if  Find==2 or En3==8191:
+                                                                    if  Find==2 or En4==15:
                                                                                 Find=1
                                                                                 Extract1=1                                                             
                                                                                                
                                                                     
-                                                                    elif En3==8190 and Find==3:
+                                                                    elif En4==14 and Find==3:
                                                                         smallest_longl_F_values = find_smallest_longl_F_values(input_string)
                                                                         if smallest_longl_F_values:
-                                                                            en, en2, en3, longl_F = smallest_longl_F_values
+                                                                            en, en2, en3, en4, longl_F = smallest_longl_F_values
                                                                             En=int(en)
                                                                             En1=int(en2)
                                                                             En3=int(en3)
@@ -371,10 +386,10 @@ class compression:
                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
-                                                                    elif len(Z4)+8+13+13+8+13+len(C1) < long_11*8:
+                                                                    elif len(Z4)+8+13+4+8+3+4+len(C1) < long_11*8:
                                                                         
                                                                         
-                                                                        input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"En3="+str(En3)+", "+"Longl_F="+str(len(Z4))+" / "
+                                                                        input_string+= "En="+str(En)+", "+"En2="+str(En1)+", "+"En3="+str(En3)+", "+"En4="+str(En4)+", "+"Longl_F="+str(len(Z4))+" / "
                                                                         #print(len(input_string))
                                                                    
                                                                         
@@ -385,8 +400,8 @@ class compression:
                                                                         if len(input_string)>100:
                                                                          smallest_longl_F_values = find_smallest_longl_F_values(input_string)
                                                                          if smallest_longl_F_values:
-                                                                             en, en2, en3, longl_F = smallest_longl_F_values
-                                                                             input_string= "En="+str(en)+", "+"En2="+str(en2)+", "+"En3="+str(en3)+", "+"Longl_F="+str(longl_F)+" / "
+                                                                             en, en2, en3, en4, longl_F = smallest_longl_F_values
+                                                                             input_string= "En="+str(en)+", "+"En2="+str(en2)+", "+"En3="+str(en3)+", "+"En4="+str(en4)+", "+"Longl_F="+str(longl_F)+" / "
                                                                              #print(input_string)
                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                        
@@ -404,9 +419,9 @@ class compression:
                                                                 W="0"+str(len(C1))+"b"
                                                                 CL1=format(longl,W)        
                                                                 CL2=format(En,'013b')
-                                                                CL3=format(En1,'013b')
-                                                                CL4=format(En3,'013b')
-                                                                
+                                                                CL3=format(En1,'03b')
+                                                                CL4=format(En3,'04b')
+                                                                CL5=format(En4,'04b')
                                                                
                                                                 #print(N3)
                                                                                                                          
@@ -419,7 +434,7 @@ class compression:
                                                                        #print(Long_PM1)
                                                                        N3=1                                                                       
                                                                        if N3==1:
-                                                                               File_information5_17="1"+CL4+CL3+CL2+CL1+Z4
+                                                                               File_information5_17="1"+CL5+CL4+CL3+CL2+CL1+Z4
                                                                                long_1=len(File_information5_17)
                                                                                add_bits=""
                                                                                count_bits=8-long_1%8
@@ -482,13 +497,17 @@ class compression:
                                                             
                                     INFO=Extract
 
-                                    En3=int(INFO[:13],2)
+                                    En4=int(INFO[:4],2)
                                         #print(longl)
-                                    INFO=INFO[13:]                                
+                                    INFO=INFO[4:] 
+
+                                    En3=int(INFO[:4],2)
+                                        #print(longl)
+                                    INFO=INFO[4:]                                
                                     
-                                    En2=int(INFO[:13],2)
+                                    En2=int(INFO[:3],2)
                                         #print(longl)
-                                    INFO=INFO[13:]
+                                    INFO=INFO[3:]
                                         
                                     En=int(INFO[:13],2)
                                         #print(longl)
@@ -675,11 +694,19 @@ class compression:
                                                      I2=INFO
                                                      I3=len(INFO)
                                                      I5=""
+                                                     En5=0
                                                      while bi<I3:
-                                                            I=I2[bi:bi+En3]
-                                                            I6=I[::-1]
-                                                            I5+=I6
-                                                            bi+=En3
+                                                        En5+=1
+                                                        if En5%2==1:
+                                                                I=I2[bi:bi+En3]
+                                                                I6=I[::-1]
+                                                                I5+=I6
+                                                                bi+=En3
+                                                        if En5%2==0:
+                                                                I=I2[bi:bi+En4]
+                                                                I6=I[::-1]
+                                                                I5+=I6
+                                                                bi+=En4 
                                                       
                                                      
                                                                                                        
