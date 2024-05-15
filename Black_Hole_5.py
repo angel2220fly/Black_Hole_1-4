@@ -39,7 +39,7 @@ class compression:
                                 En1=0
                                 M1=0
                         En4+=1
-                        if En3==15 or En4==15:
+                        if En3==15:
                                 En3=1
                                 En4=1
                          
