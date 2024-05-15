@@ -672,7 +672,7 @@ class compression:
                                                        
                                                      INFO=Z4
                                                      bi=0
-                                                     I2=I4
+                                                     I2=INFO
                                                      I3=len(INFO)
                                                      I5=""
                                                      while bi<I3:
