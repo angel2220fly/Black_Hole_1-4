@@ -235,12 +235,12 @@ class compression:
                                                                     bi=0
                                                                     En=int(En)
                                                                     QuantumCircuit(En)
-                                                                    En=int(En2)
+                                                                    En2=int(En2)
                                                                     QuantumCircuit(En2)
                                                                     
-                                                                    En=int(En3)
+                                                                    En3=int(En3)
                                                                     QuantumCircuit(En3)
-                                                                    En=int(En4)
+                                                                    En4=int(En4)
                                                                     QuantumCircuit(En4)                                                                    
                                                                     
                                                                     M1,En,En1,En3,En4=Count_adds(M1,En,En1,En3,En4)
