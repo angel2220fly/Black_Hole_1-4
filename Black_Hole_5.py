@@ -214,7 +214,7 @@ class compression:
                                                     En1=0
                                                     input_string=""
                                                     C1=""
-                                                    En3=2
+                                                    En3=1
                                                     
                                                     I4=INFO# reverse
                                                     
