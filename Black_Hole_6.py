@@ -255,7 +255,7 @@ class compression:
                                                                                 I6=I[::-1]
                                                                                 I5+=I6
                                                                                 bi+=En3
-                                                                        if En5%2==0:
+                                                                        elif En5%2==0:
                                                                                 I=I2[bi:bi+En4]
                                                                                 I6=I[::-1]
                                                                                 I5+=I6
@@ -716,7 +716,7 @@ class compression:
                                                                 I6=I[::-1]
                                                                 I5+=I6
                                                                 bi+=En3
-                                                        if En5%2==0:
+                                                        elif En5%2==0:
                                                                 I=I2[bi:bi+En4]
                                                                 I6=I[::-1]
                                                                 I5+=I6
