@@ -235,6 +235,7 @@ class compression:
                                                                     I3=len(INFO)
                                                                     I5=""
                                                                     #print(En1)
+                                                                    En5=0
                                                                     while bi<I3:
                                                                         En5+=1
                                                                         if En5%2==1:
