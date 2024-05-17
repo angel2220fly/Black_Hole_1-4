@@ -377,6 +377,7 @@ class compression:
                                                                             En=int(en)
                                                                             En1=int(en2)
                                                                             En3=int(en3)
+                                                                            En4=int(e4)
                                                                             Find=2     
                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
