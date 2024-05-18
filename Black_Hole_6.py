@@ -235,7 +235,7 @@ class compression:
                                                                     bi=0
                                                                     En=int(En)
                                                                     QuantumCircuit(En)
-                                                                    En2=int(En2)
+                                                                    En1=int(En1)
                                                                     QuantumCircuit(En1)
                                                                     
                                                                     En3=int(En3)
