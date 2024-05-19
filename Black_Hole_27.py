@@ -502,122 +502,14 @@ class compression:
                                                             
                                     INFO=Extract
 
-                                    En41 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
+                                  
+                                    values = []
+                                    for _ in range(41, 2, -1):
+                                        values.append(int(INFO[:4], 2))
+                                        INFO = INFO[4:]
                                     
-                                    En40 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En39 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En38 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En37 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En36 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En35 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En34 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En33 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En32 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En31 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En30 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En29 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En28 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En27 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En26 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En25 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En24 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En23 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En22 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En21 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En20 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En19 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En18 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En17 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En16 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En15 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En14 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En13 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En12 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En11 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En10 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En9 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En8 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En7 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En6 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En4 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En3 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
-                                    
-                                    En2 = int(INFO[:4], 2)
-                                    INFO = INFO[4:]
+                                    En41, En40, En39, En38, En37, En36, En35, En34, En33, En32, En31, En30, En29, En28, En27, En26, En25, En24, En23, En22, En21, En20, En19, En18, En17, En16, En15, En14, En13, En12, En11, En10, En9, En8, En7, En6, En4, En3, En2 = values
+
                                     
                                     En = int(INFO[:13], 2)
                                     INFO = INFO[13:]
