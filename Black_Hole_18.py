@@ -344,7 +344,7 @@ class compression:
                                                                             en, en2, en3, longl_F = smallest_longl_F_values
                                                                             En=int(en)
                                                                             En1=int(en2)
-                                                                            En3=int(en3)
+                                                                            En3=0
                                                                             Find=2     
                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                 
