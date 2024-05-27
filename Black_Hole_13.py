@@ -592,7 +592,7 @@ class compression:
                                                              
                                                                 E=int(EB,2)
                                                                 ZE=format(E,En1)
-                                                                C="0"+str(longl)+"b"
+                                                                C="0"+str(longl-Size)+"b"
                                                                 ZE=format(E,En1)
                                                                 Z2Z=format(E,C)
                                                                 if En2!=0:
